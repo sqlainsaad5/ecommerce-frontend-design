@@ -1,0 +1,211 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #f3f5f9;
+    color: #333;
+  }
+  
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: white;
+  }
+  
+  .brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .search-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .search-container input,
+  .search-container select,
+  .search-container button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .user-options span {
+    margin-left: 15px;
+    cursor: pointer;
+  }
+  
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #fff;
+    font-size: 14px;
+  }
+  
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .main-nav li {
+    cursor: pointer;
+  }
+  
+  .lang-shipping span {
+    margin-left: 15px;
+  }
+  
+  .main-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .sidebar {
+    width: 180px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 10px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .sidebar li.active {
+    background-color: #e9f1ff;
+    font-weight: bold;
+  }
+  
+  .banner {
+    background: #c0e2d0;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+    position: relative;
+  }
+  
+  .banner button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .banner img {
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .right-panel {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .login-box, .promo, .quote-box {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .join {
+    background: #007bff;
+    color: white;
+    margin: 5px 0;
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .login {
+    background: #ddd;
+    border: none;
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .promo {
+    background: #ff8c42;
+    color: white;
+  }
+  
+  .quote-box {
+    background: #50bfa5;
+    color: white;
+  }
+  
+  .deals-section {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #4da2ff;
+    border-radius: 5px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .deal-box {
+    width: 200px;
+  }
+  
+  .timer {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .product-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .product {
+    text-align: center;
+  }
+  
+  .discount {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .home-outdoor {
+    display: flex;
+    margin: 20px;
+    gap: 20px;
+  }
+  
+  .source-box {
+    background: #f8f0e3;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
