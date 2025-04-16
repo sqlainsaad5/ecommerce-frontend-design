@@ -4,7 +4,115 @@ body {
     background-color: #f3f5f9;
     color: #333;
   }
+
   
+
+  .top-bar, .bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4285f4;
+  }
+  
+  .logo i {
+    margin-right: 8px;
+  }
+  .search-bar {
+    display: flex;
+    align-items: center;
+    flex: 2;
+    max-width: 800px;
+    margin: 0 20px;
+    width: 100%;
+  
+    border: 2px solid #007bff; /* unified blue border */
+    border-radius: 6px;
+    overflow: hidden; /* ensures smooth corners */
+  }
+  
+  .search-bar input {
+    padding: 8px;
+    flex: 2;
+    border: none;
+    outline: none;
+  }
+  
+  .search-bar select {
+    padding: 8px;
+    border: none;
+    outline: none;
+  }
+  
+  .search-bar button {
+    padding: 8px 16px;
+    background-color: #0066ff;
+    border: none;
+    color: #fff;
+    border-radius: 0;
+    cursor: pointer;
+  }
+  
+
+  .top-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 10px;
+  }
+  
+  .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+  
+  
+  
+  
+  .bottom-bar {
+    font-size: 14px;
+    background-color: #fafafa;
+  }
+  .nav-links > div:first-child {
+    font-weight: bold;
+    border-right: 1px solid #ccc;
+    padding-right: 15px;
+    margin-right: 10px;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .language-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .language-options img {
+    width: 20px;
+    height: auto;
+  }
   .top-bar {
     display: flex;
     align-items: center;
@@ -208,4 +316,7 @@ body {
     padding: 20px;
     border-radius: 5px;
   }
+  
+
+
   
