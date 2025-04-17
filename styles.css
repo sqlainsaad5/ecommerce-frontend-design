@@ -269,39 +269,115 @@ body {
     color: white;
   }
   
-  .deals-section {
-    background: white;
-    margin: 20px;
-    padding: 20px;
-    border: 2px solid #4da2ff;
-    border-radius: 5px;
+  .product-showcase {
+    max-width: 1210px;
+    margin: 0 auto;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background: white;
   }
   
-  .deal-box {
-    width: 200px;
+  .offer-box {
+    width: 275px;
+    height: 240px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .timer {
+    display: flex;
+    gap: 10px;
     margin-top: 10px;
-    font-weight: bold;
   }
   
-  .product-list {
+  .timer-box {
+    background-color: #555;
+    color: #e4e2e2;
+    text-align: center;
+    padding: 8px 12px;
+    width: 50px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
+  .products {
     display: flex;
-    gap: 20px;
-    align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
   }
   
   .product {
+    width: 179px;
+    height: 235px;
     text-align: center;
+    border-right: 1px solid #eee;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  /* Add this to remove border from last product */
+  .products .product:last-child {
+    border-right: none;
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
   }
   
   .discount {
+    background-color: #ffd6d6;
     color: red;
-    font-weight: bold;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .product-showcase {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .offer-box {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #ccc;
+      align-items: center;
+    }
+  
+    .products {
+      justify-content: center;
+    }
+  
+    .product {
+      width: 45%;
+      margin: 10px 5px;
+      border: none;
+    }
+  
+    .timer-box {
+      width: 45px;
+      height: 45px;
+      font-size: 13px;
+    }
+  }
+    
   
   .home-outdoor {
     display: flex;
