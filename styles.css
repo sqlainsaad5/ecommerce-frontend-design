@@ -315,6 +315,7 @@ body {
     display: flex;
     flex: 1;
     flex-wrap: wrap;
+    justify-content: space-evenly;
   }
   
   .product {
