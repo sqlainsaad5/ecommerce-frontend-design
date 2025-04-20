@@ -80,11 +80,13 @@ body {
     align-items: center;
     text-align: center;
     cursor: pointer;
+    
   }
   
   .icon {
     font-size: 20px;
     margin-bottom: 4px;
+    
   }
   
   
@@ -417,10 +419,7 @@ body {
     box-sizing: border-box;
   }
   
-  body {
-    font-family: sans-serif;
-    background-color: #f9fafb;
-  }
+  
   
   .home-outdoor {
     display: flex;
@@ -695,7 +694,7 @@ body {
       line-height: 1.4;
     }
     
-    .icon {
+    .icon1 {
       position: absolute;
       right: 15px;
       top: -20px;
@@ -723,8 +722,11 @@ body {
     
     .region-list {
       display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
-      gap: 20px 40px;
+      
+      margin-left: 50px;
+      margin-right: 50px;
       
     }
     
@@ -819,3 +821,86 @@ body {
       background: linear-gradient(to right, #0056cc, #004bb5);
     }
         
+
+
+ 
+
+.footer {
+  background-color: #ffffff;
+  padding: 40px 60px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  max-width: 220px;
+}
+
+.brand-icon {
+  display: inline-block;
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.brand-name {
+  display: inline-block;
+  color: #3b82f6;
+  font-size: 20px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: #555;
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+.social-icons {
+  margin-top: 16px;
+}
+
+.social-icons i {
+  font-size: 16px;
+  color: #999;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.footer-links h4 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 14px;
+  color: #94a3b8;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.footer-apps h4 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.footer-apps img {
+  display: block;
+  max-width: 120px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
