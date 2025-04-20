@@ -1,7 +1,7 @@
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    background-color: #f3f5f9;
+    background-color: #f7fafc;
     color: #333;
   }
 
@@ -713,6 +713,7 @@ body {
     .suppliers-region {
       padding: 20px;
       font-family: Arial, sans-serif;
+     
     }
     
     .suppliers-region h2 {
@@ -757,7 +758,7 @@ body {
     
 
     .newsletter {
-      background-color: #f3f5f7;
+      background-color:#eff2f4;
       padding: 40px 20px;
       text-align: center;
     }
@@ -903,4 +904,28 @@ body {
   max-width: 120px;
   margin-bottom: 10px;
   border-radius: 6px;
+}
+
+.footer-bottom {
+  background-color: #f1f4f6;
+  padding: 15px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-bottom .language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+}
+
+.language-switcher img {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
 }
