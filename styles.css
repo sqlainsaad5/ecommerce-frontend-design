@@ -753,3 +753,69 @@ body {
       color: gray;
     }
     
+
+    .newsletter {
+      background-color: #f3f5f7;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .newsletter-content h3 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    
+    .newsletter-content p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    
+    .input-wrapper {
+      position: relative;
+      
+
+    }
+    
+    .input-wrapper i {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #888;
+      font-size: 18px;
+    }
+    
+    .input-wrapper input {
+      padding: 10px 12px 10px 40px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      min-width: 250px;
+      outline: none;
+    }
+    
+    .newsletter-form button {
+      background: linear-gradient(to right, #007bff, #0d6efd);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .newsletter-form button:hover {
+      background: linear-gradient(to right, #0056cc, #004bb5);
+    }
+        
