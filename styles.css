@@ -176,19 +176,19 @@ body {
   
   .main-container {
     display: flex;
-    padding: 20px;
-    gap: 10px;
+    padding: 10px;
+    gap: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     background: white;
-    margin: 25px;
+    margin: 15px;
     border-radius: 5px;
   }
   
   .sidebar {
-    width: 230px;
+    width: 250px;
     background: white;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
   }
   
@@ -208,6 +208,195 @@ body {
     font-weight: bold;
   }
   
+
+
+
+
+
+
+  .user-card {
+    width: 220px;
+    padding: 5px;
+
+  }
+  
+  .user-info {
+    background-color: #eef3fb;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    background: #d0e2f7;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+  }
+  
+  .user-info p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .join-btn {
+    background-color: #0074f0;
+    color: white;
+    border: none;
+    padding: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .login-btn {
+    background-color: white;
+    color: #0074f0;
+    border: 1px solid #0074f0;
+    padding: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .offer {
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .orange {
+    background-color: #f58c1f;
+  }
+  
+  .teal {
+    background-color: #59c3c3;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .electronic-banner {
+    position: relative;
+    width: 60%;
+    
+    margin: 0 auto;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .electronic-banner img {
+    width: 100%;
+    display: block;
+    height: auto;
+
+  }
+  
+  .banner-content {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    color: #000;
+  }
+  
+  .banner-content p {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .banner-content h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .banner-content button {
+    padding: 10px 18px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .banner-content button:hover {
+    background-color: #e6e6e6;
+  }
+  
+  /* ---------- RESPONSIVE STYLES ---------- */
+  @media (max-width: 768px) {
+    .banner-content {
+      top: 15%;
+      left: 7%;
+    }
+  
+    .banner-content p {
+      font-size: 16px;
+    }
+  
+    .banner-content h2 {
+      font-size: 22px;
+    }
+  
+    .banner-content button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .banner-content {
+      top: 12%;
+      left: 6%;
+    }
+  
+    .banner-content p {
+      font-size: 15px;
+    }
+  
+    .banner-content h2 {
+      font-size: 20px;
+    }
+  
+    .banner-content button {
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+  }
+
+
+
+
+
+
   .banner {
     background: #c0e2d0;
     padding: 20px;
@@ -233,7 +422,7 @@ body {
   }
   
   .right-panel {
-    width: 150px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -287,17 +476,7 @@ body {
     border-radius: 5px;
   }
   
-  .offer-box {
   
-    width: 260px;
-    height: 240px;
-    padding: 20px;
-    box-sizing: border-box;
-    border-right: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
   
   .timer {
     display: flex;
