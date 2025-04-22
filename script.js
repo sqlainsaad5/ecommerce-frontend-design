@@ -1,26 +1,30 @@
-// timer.js
-const endDate = new Date("2025-04-30T00:00:00").getTime();
+// Set your target countdown date (YYYY-MM-DD HH:MM:SS)
+const targetDate = new Date("2025-04-25T00:00:00").getTime();
 
-const timer = setInterval(() => {
+const timerElements = document.querySelectorAll('.timer div');
+
+function updateCountdown() {
   const now = new Date().getTime();
-  const diff = endDate - now;
+  const distance = targetDate - now;
 
-  if (diff < 0) {
-    clearInterval(timer);
-    document.getElementById("days").textContent = "00";
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
+  if (distance <= 0) {
+    timerElements.forEach(el => {
+      el.querySelector('span').textContent = "00";
+    });
+    clearInterval(timerInterval);
     return;
   }
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+  const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+  const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+  const mins = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+  const secs = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
 
-  document.getElementById("days").textContent = String(days).padStart(2, '0');
-  document.getElementById("hours").textContent = String(hours).padStart(2, '0');
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
-}, 1000);
+  timerElements[0].querySelector('span').textContent = days;
+  timerElements[1].querySelector('span').textContent = hours;
+  timerElements[2].querySelector('span').textContent = mins;
+  timerElements[3].querySelector('span').textContent = secs;
+}
+
+const timerInterval = setInterval(updateCountdown, 1000);
+updateCountdown(); // initial call
