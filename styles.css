@@ -630,30 +630,62 @@ body {
   .home-outdoor {
     display: flex;
     overflow: hidden;
-    margin: 20px;
+    margin: 25px;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
+    
   }
   
   .left-banner {
-    background: url('banner.jpg') no-repeat center center/cover;
-    width: 300px;
+    background: url('images/image\ 92.png') no-repeat center center/cover;
+    width: 350px;
     padding: 20px;
     color: #000;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
   }
+
+  .left-banner2 {
+    background: url('images/image\ 98.png') no-repeat center center/cover;
+    width: 350px;
+    padding: 20px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .left-banner2 h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    
+  }
+
+  .left-banner2 button {
+    
+    background-color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  
   
   .left-banner h2 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 20px;
+    
   }
   
   .left-banner button {
-    padding: 10px 15px;
+    
     background-color: #fff;
+    padding: 8px 16px;
     border: none;
     border-radius: 6px;
     font-weight: bold;
@@ -674,8 +706,9 @@ body {
     border-bottom: 1px solid #eee;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    
     height: 130px;
+    
     position: relative;
   }
   
@@ -698,21 +731,77 @@ body {
     position: absolute;
     bottom: 10px;
     right: 10px;
-    height: 50px;
+    height: 70px;
     object-fit: contain;
   }
   
 
+  @media (max-width: 768px) {
+    .home-outdoor {
+      flex-direction: column;
+    }
+  
+    .left-banner {
+      width: 100%;
+      padding: 15px;
+      text-align: center;
+    }
+  
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet/mobile */
+    }
+  
+    .product-box {
+      height: auto;
+      padding-bottom: 60px; /* extra space for image */
+    }
+  
+    .product-box img {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      height: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .products-grid {
+      grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+  
+    .product-box img {
+      height: 35px;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   .quote-request {
     display: flex;
     justify-content: space-between;
-    background: url('your-background-image.jpg') no-repeat center/cover;
+    background: url('images/image\ 102.png') no-repeat center/cover;
     padding: 40px;
     border-radius: 5px;
     position: relative;
     overflow: hidden;
     color: #fff;
-    margin: 20px;
+    margin: 25px;
     gap: 20px;
   }
   
