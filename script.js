@@ -1,30 +1,49 @@
-// Set your target countdown date (YYYY-MM-DD HH:MM:SS)
-const targetDate = new Date("2025-04-25T00:00:00").getTime();
+const minRange = document.getElementById('min-range');
+  const maxRange = document.getElementById('max-range');
+  const minInput = document.getElementById('min-input');
+  const maxInput = document.getElementById('max-input');
+  const track = document.querySelector('.slider-track');
+  const maxValue = 999999;
 
-const timerElements = document.querySelectorAll('.timer div');
-
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
-
-  if (distance <= 0) {
-    timerElements.forEach(el => {
-      el.querySelector('span').textContent = "00";
-    });
-    clearInterval(timerInterval);
-    return;
+  function setTrackFill(min, max) {
+    const left = (min / maxValue) * 100;
+    const right = 100 - (max / maxValue) * 100;
+    track.style.left = left + '%';
+    track.style.right = right + '%';
   }
 
-  const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
-  const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-  const mins = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-  const secs = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+  function syncFromSlider() {
+    let minVal = parseInt(minRange.value);
+    let maxVal = parseInt(maxRange.value);
+    if (minVal > maxVal) [minVal, maxVal] = [maxVal, minVal];
+    minInput.value = minVal;
+    maxInput.value = maxVal;
+    minRange.value = minVal;
+    maxRange.value = maxVal;
+    setTrackFill(minVal, maxVal);
+  }
 
-  timerElements[0].querySelector('span').textContent = days;
-  timerElements[1].querySelector('span').textContent = hours;
-  timerElements[2].querySelector('span').textContent = mins;
-  timerElements[3].querySelector('span').textContent = secs;
-}
+  function syncFromInputs() {
+    let minVal = parseInt(minInput.value) || 0;
+    let maxVal = parseInt(maxInput.value) || maxValue;
+    if (minVal > maxVal) [minVal, maxVal] = [maxVal, minVal];
+    minRange.value = minVal;
+    maxRange.value = maxVal;
+    setTrackFill(minVal, maxVal);
+  }
 
-const timerInterval = setInterval(updateCountdown, 1000);
-updateCountdown(); // initial call
+  minRange.addEventListener('input', syncFromSlider);
+  maxRange.addEventListener('input', syncFromSlider);
+  minInput.addEventListener('input', syncFromInputs);
+  maxInput.addEventListener('input', syncFromInputs);
+
+  document.getElementById('apply-btn').addEventListener('click', () => {
+    alert("Min: " + minInput.value + ", Max: " + maxInput.value);
+  });
+
+  function toggleFilter(titleElement) {
+    const list = titleElement.nextElementSibling;
+    list.classList.toggle('collapsed');
+  }
+
+  syncFromSlider();
