@@ -74,6 +74,8 @@
         <span class="current">Summer clothing</span>
       </nav>
 
+  <div class="st">
+
 
 
       <div class="sidebar1">
@@ -130,17 +132,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         <div class="filter-group">
           <div class="filter-title" onclick="toggleFilter(this)">
             <span>Price range</span>
@@ -170,23 +161,6 @@
         </div>
         
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -245,7 +219,46 @@
       
     </div>
 
-   
+
+    <div class="filter-bar-wrapper">
+      <div class="filter-bar-left">
+        <span class="item-count">12,911 items in <strong>Mobile accessory</strong></span>
+      </div>
+    
+      <div class="filter-bar-right">
+        <!-- Added margin-start class for spacing -->
+        <label class="verified-toggle ms-20">
+          <input type="checkbox" id="verifiedToggle" checked />
+          <span class="checkmark"></span>
+          Verified only
+        </label>
+    
+        <select class="sort-dropdown" id="sortOptions">
+          <option>Featured</option>
+          <option>Newest</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+        </select>
+    
+        <div class="view-toggle">
+          <button id="gridView" class="toggle-btn active">
+            <img src="grid-icon.svg" alt="Grid View" />
+          </button>
+          <button id="listView" class="toggle-btn">
+            <img src="list-icon.svg" alt="List View" />
+          </button>
+        </div>
+      </div>
+    </div>
+    
+</div>
+
+  
+    
+  </div>
+
+   </body>
+   </html>
     
 
 
