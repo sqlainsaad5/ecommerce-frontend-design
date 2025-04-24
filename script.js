@@ -47,3 +47,41 @@ const minRange = document.getElementById('min-range');
   }
 
   syncFromSlider();
+
+
+  // ⏳ Countdown Timer Script
+document.addEventListener('DOMContentLoaded', () => {
+  const targetDate = new Date("2025-04-25T00:00:00").getTime(); // Set your deadline
+
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minsEl = document.getElementById("minutes");
+  const secsEl = document.getElementById("seconds");
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+      daysEl.textContent = "00";
+      hoursEl.textContent = "00";
+      minsEl.textContent = "00";
+      secsEl.textContent = "00";
+      clearInterval(interval);
+      return;
+    }
+
+    const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+    const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+    const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+    const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+
+    daysEl.textContent = days;
+    hoursEl.textContent = hours;
+    minsEl.textContent = minutes;
+    secsEl.textContent = seconds;
+  }
+
+  const interval = setInterval(updateCountdown, 1000);
+  updateCountdown(); // Initial call
+});
