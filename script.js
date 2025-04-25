@@ -85,3 +85,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const interval = setInterval(updateCountdown, 1000);
   updateCountdown(); // Initial call
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const gridBtn = document.getElementById("gridView");
+  const listBtn = document.getElementById("listView");
+
+  gridBtn.addEventListener("click", () => {
+    gridBtn.classList.add("active");
+    listBtn.classList.remove("active");
+  });
+
+  listBtn.addEventListener("click", () => {
+    listBtn.classList.add("active");
+    gridBtn.classList.remove("active");
+  });
+});
+
+const wishlistBtn = document.getElementById('wishlistBtn');
+
+wishlistBtn.addEventListener('click', () => {
+  wishlistBtn.classList.toggle('added');
+
+  if (wishlistBtn.classList.contains('added')) {
+    wishlistBtn.innerHTML = '❤️';
+  } else {
+    wishlistBtn.innerHTML = '🤍';
+  }
+});
