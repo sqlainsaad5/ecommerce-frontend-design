@@ -2,169 +2,326 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Cards</title>
+  <title>Product Page</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: Arial, sans-serif;
-      background: #f6f9fc;
-      padding: 20px;
+      background: #f4f6f9;
+      padding: 30px;
     }
-
     .container {
-      width: 926px;
-      margin: auto;
       display: flex;
-      gap: 15px;
-    }
-
-    .card {
+      align-items: flex-start;
       background: #fff;
-      border: 1px solid #e2e8f0;
       border-radius: 10px;
-      width: 290px;
-      height: 405px;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
     }
-
-    .card:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    .left, .middle, .right {
+      padding: 10px;
     }
-
-    .card img {
+    .left {
+      width: 30%;
+    }
+    .middle {
+      width: 45%;
+      border-left: 1px solid #eee;
+      border-right: 1px solid #eee;
+    }
+    .right {
+      width: 25%;
+    }
+    .main-img {
       width: 100%;
-      height: 70%;
-      object-fit: contain;
-      background: #f9fafb;
+      border-radius: 8px;
     }
-
-    .card-content {
-      padding: 10px 15px;
-      flex-grow: 1;
+    .thumbnails {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
+      margin-top: 10px;
+    }
+    .thumbnails img {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    .product-details {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  border: 1px solid #eee;
+}
+
+.stock-status {
+  color: green;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.product-details h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.ratings {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: #999;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.rating-score {
+  color: #f60;
+  font-weight: bold;
+}
+
+.price-box {
+  display: flex;
+  background-color: #fff3e0; /* peach background */
+  border: 1px solid #e0dcd6; /* light border around the whole box */
+  border-radius: 4px;
+  padding: 12px 0;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.price-tier {
+  flex: 1;
+  padding-left: 10px;
+}
+
+.price-tier strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.price-tier span {
+  font-size: 12px;
+  color: #777;
+  margin-top: 2px;
+}
+
+.highlight1 {
+  color: #d32f2f; /* red for first price */
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: #e0dcd6; /* same as outer border */
+}
+
+
+.card {
+      width: 240px;
+      border: 1px solid #e6e6e6;
+      border-radius: 8px;
+      padding: 16px;
+      background-color: #fff;
     }
 
-    .price-row {
+    .supplier-info {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 5px;
-    }
-
-    .price-row .price {
-      font-size: 18px;
-      font-weight: bold;
-      color: #000;
-    }
-
-    .price-row .old-price {
-      font-size: 14px;
-      color: #a0aec0;
-      text-decoration: line-through;
-    }
-
-    .rating {
-      display: flex;
-      align-items: center;
-      gap: 4px;
       margin-bottom: 8px;
     }
 
-    .rating-stars {
-      color: #f59e0b;
+    .supplier-logo {
+      width: 40px;
+      height: 40px;
+      background-color: #d6eef5;
+      color: #368bb7;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: 20px;
+      margin-right: 8px;
+    }
+
+    .supplier-text {
+      line-height: 1.2;
+    }
+
+    .supplier-text b {
+      display: block;
       font-size: 14px;
+      color: #000;
     }
 
-    .rating-value {
-      font-size: 13px;
-      color: #f59e0b;
+    hr {
+      border: none;
+      border-top: 1px solid #e6e6e6;
+      margin: 12px 0;
     }
 
-    .description {
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-size: 14px;
-      color: #4a5568;
-      line-height: 1.3;
+      color: #7d8c96;
+      margin-bottom: 10px;
     }
 
-    .wishlist {
-      margin-left: auto;
-      color: #3182ce;
-      font-size: 18px;
+    .info-row img {
+      width: 16px;
+      height: 16px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      background: #0064ff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-weight: 500;
       cursor: pointer;
+      margin-top: 12px;
+    }
+
+    .profile-link {
+      width: 100%;
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px;
+      text-align: center;
+      background-color: #f6f7f9;
+      color: #0064ff;
+      font-weight: 500;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .save-later {
+      text-align: center;
+      margin-top: 16px;
+      color: #0064ff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .save-later img {
+      vertical-align: middle;
+      width: 18px;
+      margin-right: 4px;
     }
   </style>
 </head>
 <body>
 
 <div class="container">
-
-  <div class="card">
-    <img src="https://via.placeholder.com/150x200" alt="Product 1">
-    <div class="card-content">
-      <div>
-        <div class="price-row">
-          <div class="price">$99.50</div>
-          <div class="old-price">$1128.00</div>
-          <div class="wishlist">♡</div>
-        </div>
-        <div class="rating">
-          <div class="rating-stars">★★★★☆</div>
-          <div class="rating-value">7.5</div>
-        </div>
-        <div class="description">
-          GoPro HERO6 4K Action Camera - Black
-        </div>
-      </div>
+  <div class="left">
+    <img class="main-img" src="https://via.placeholder.com/250x300?text=Main+Image" id="mainImage" alt="Main Product">
+    <div class="thumbnails">
+      <img src="https://via.placeholder.com/50?text=1" onclick="switchImage(this)">
+      <img src="https://via.placeholder.com/50?text=2" onclick="switchImage(this)">
+      <img src="https://via.placeholder.com/50?text=3" onclick="switchImage(this)">
+      <img src="https://via.placeholder.com/50?text=4" onclick="switchImage(this)">
+      <img src="https://via.placeholder.com/50?text=5" onclick="switchImage(this)">
     </div>
   </div>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/150x200" alt="Product 2">
-    <div class="card-content">
-      <div>
-        <div class="price-row">
-          <div class="price">$99.50</div>
-          <div class="old-price">$1128.00</div>
-          <div class="wishlist">♡</div>
-        </div>
-        <div class="rating">
-          <div class="rating-stars">★★★★☆</div>
-          <div class="rating-value">5.9</div>
-        </div>
-        <div class="description">
-          GoPro HERO6 4K Action Camera - Blue
-        </div>
+  <div class="product-details">
+    <p class="stock-status">✔️ In stock</p>
+    <h2>Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</h2>
+  
+    <div class="ratings">
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="rating-score">9.3</span>
+      <span class="reviews">💬 32 reviews</span>
+      <span class="sold">🛒 154 sold</span>
+    </div>
+  
+    <div class="price-box">
+      <div class="price-tier">
+        <strong style="color: #d32f2f;">$98.00</strong>
+        <span>50–100 pcs</span>
+      </div>
+      <div class="divider"></div>
+      <div class="price-tier">
+        <strong>$90.00</strong>
+        <span>100–700 pcs</span>
+      </div>
+      <div class="divider"></div>
+      <div class="price-tier">
+        <strong>$78.00</strong>
+        <span>700+ pcs</span>
       </div>
     </div>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/150x200" alt="Product 3">
-    <div class="card-content">
-      <div>
-        <div class="price-row">
-          <div class="price">$99.50</div>
-          <div class="old-price">$1128.00</div>
-          <div class="wishlist">♡</div>
-        </div>
-        <div class="rating">
-          <div class="rating-stars">★★★★☆</div>
-          <div class="rating-value">7.5</div>
-        </div>
-        <div class="description">
-          GoPro HERO6 4K Action Camera - Black
-        </div>
-      </div>
+    
+    
+  
+    <div class="product-specs">
+      <p><strong>Price:</strong> <span>Negotiable</span></p>
+      <p><strong>Type:</strong> <span>Classic shoes</span></p>
+      <p><strong>Material:</strong> <span>Plastic material</span></p>
+      <p><strong>Design:</strong> <span>Modern nice</span></p>
+      <p><strong>Customization:</strong> <span>Customized logo and design custom packages</span></p>
+      <p><strong>Protection:</strong> <span>Refund Policy</span></p>
+      <p><strong>Warranty:</strong> <span>2 years full warranty</span></p>
     </div>
   </div>
+  
+<div>
+  <div class="card">
+    <div class="supplier-info">
+      <div class="supplier-logo">R</div>
+      <div class="supplier-text">
+        <span>Supplier</span>
+        <b>Guanjoi Trading LLC</b>
+      </div>
+    </div>
 
+    <hr>
+
+    <div class="info-row">
+      <img src="https://flagcdn.com/16x12/de.png" alt="Germany" />
+      <span>Germany, Berlin</span>
+    </div>
+    <div class="info-row">
+      <img src="https://cdn-icons-png.flaticon.com/512/535/535137.png" alt="Verified" />
+      <span>Verified Seller</span>
+    </div>
+    <div class="info-row">
+      <img src="https://cdn-icons-png.flaticon.com/512/535/535285.png" alt="Shipping" />
+      <span>Worldwide shipping</span>
+    </div>
+
+    <button class="btn">Send inquiry</button>
+    <a class="profile-link" href="#">Seller’s profile</a>
+  </div>
+
+  <div class="save-later">
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Heart Icon" />
+    Save for later
+  </div>
 </div>
+  
+<script>
+  function switchImage(thumb) {
+    document.getElementById('mainImage').src = thumb.src;
+  }
+</script>
 
 </body>
 </html>
