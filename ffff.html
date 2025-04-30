@@ -27,6 +27,9 @@
     }
     .left {
       width: 30%;
+      border-radius: 8px;
+  
+  border: 1px solid #eee;
     }
     .middle {
       width: 45%;
@@ -57,9 +60,8 @@
   font-family: Arial, sans-serif;
   background: #fff;
   padding: 20px;
-  border-radius: 8px;
+  
   max-width: 400px;
-  border: 1px solid #eee;
 }
 
 .stock-status {
@@ -225,19 +227,29 @@
       width: 18px;
       margin-right: 4px;
     }
+
+    .row-with-line {
+  padding: 0px;
+  border-bottom: 1px solid #ccc; /* Light gray line */
+}
+
+.spaceresolve{
+ display: flex;
+  gap: 80px;
+}
   </style>
 </head>
 <body>
 
 <div class="container">
   <div class="left">
-    <img class="main-img" src="https://via.placeholder.com/250x300?text=Main+Image" id="mainImage" alt="Main Product">
+    <img class="main-img" src="images/image 343.png" id="mainImage" alt="Main Product">
     <div class="thumbnails">
-      <img src="https://via.placeholder.com/50?text=1" onclick="switchImage(this)">
-      <img src="https://via.placeholder.com/50?text=2" onclick="switchImage(this)">
-      <img src="https://via.placeholder.com/50?text=3" onclick="switchImage(this)">
-      <img src="https://via.placeholder.com/50?text=4" onclick="switchImage(this)">
-      <img src="https://via.placeholder.com/50?text=5" onclick="switchImage(this)">
+      <img src="images/image 343.png" onclick="switchImage(this)">
+      <img src="images/image 35.png" onclick="switchImage(this)">
+      <img src="images/image 40.png" onclick="switchImage(this)">
+      <img src="images/image 37.png" onclick="switchImage(this)">
+      <img src="images/image 343.png" onclick="switchImage(this)">
     </div>
   </div>
 
@@ -272,13 +284,21 @@
     
   
     <div class="product-specs">
-      <p><strong>Price:</strong> <span>Negotiable</span></p>
-      <p><strong>Type:</strong> <span>Classic shoes</span></p>
-      <p><strong>Material:</strong> <span>Plastic material</span></p>
-      <p><strong>Design:</strong> <span>Modern nice</span></p>
-      <p><strong>Customization:</strong> <span>Customized logo and design custom packages</span></p>
-      <p><strong>Protection:</strong> <span>Refund Policy</span></p>
-      <p><strong>Warranty:</strong> <span>2 years full warranty</span></p>
+    
+      <div class="row-with-line">
+        <p class="spaceresolve"><strong>Price:</strong> <span>Negotiable</span></p>
+    </div>
+    <div class="row-with-line">
+      <p class="spaceresolve"><strong>Type:</strong> <span>Classic shoes</span></p>
+      <p class="spaceresolve"><strong>Material:</strong> <span>Plastic material</span></p>
+      <p class="spaceresolve"><strong>Design:</strong> <span>Modern nice</span></p>
+    </div>
+    <div class="row-with-line">
+      <p class="spaceresolve"><strong>Customization:</strong> <span>Customized logo and design custom packages</span></p>
+      <p class="spaceresolve"><strong>Protection:</strong> <span>Refund Policy</span></p>
+      <p class="spaceresolve"><strong>Warranty:</strong> <span>2 years full warranty</span></p>
+     
+    </div>
     </div>
   </div>
   
